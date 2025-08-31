@@ -80,7 +80,7 @@ const OtpForm = (props: OtpFormPropsType) => {
                         </div>
                     </div>
                     <div className="mt-6 text-sm font-normal leading-5 tracking-[0.04px] text-text-light2">
-                        Didn't receive a code?{' '}
+                        Didn't receive a code?
                         <a href="#" className="text-primary font-bold">
                             Send again
                         </a>
