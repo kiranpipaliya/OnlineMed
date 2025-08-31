@@ -1,26 +1,89 @@
+/* Import Tailwind v4 */
 @import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/pagination";
+@theme {
+    --color-primary: #2563EB;
+    --color-danger: #DF1C41;
+    --color-success: #00D66F;
+    --color-success-dark: #30B130;
+    --color-warning: #FFD712;
+    --color-primaryLight: #2563EB1A;
+    --color-primaryDark: #153885;
+    --color-bg: #E8F0FD;
+    --color-surface: #F3F5FA;
+    --color-status-orange: #F97316;
+    --color-status-green: #00B774;
+    --color-white: #FFFFFF;
+    --color-white-light: #ffffff60;
+    --color-text-light: #4B5563;
+    --color-text-light2: #4B556399;
+    --color-text-ex-light: #99A1AF;
+    --color-placeholder: #4B5563B2;
+    --color-border: #DFE1E6;
+    --color-border2: #EAEDF5;
+    --color-back-light: #F5F7FB;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --color-text-dark: #0D0D12;
+    --color-text-d-light: #353849;
+    --color-dark-100: #111827;
+    --color-dark-75: #4D525D;
+    --color-dark-50: #888B93;
+    --color-dark-25: #C3C5C9;
+    --color-dark-10: #E7E8E9;
+    --color-dark-5: #F3F3F4;
+    --boxShadow-custom:"0px 4px 8px 0px rgba(75, 85, 99, 0.15)";
+
+
+    /* set default font */
+    --font-sans: "Satoshi", ui-sans-serif, system-ui;
+    --font-sf-pro: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body,
+html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--color-bg);
+    font-family: var(--font-sans);
+    color: var(--color-dark-100);
+
+}
+
+.shadow-inner-border {
+    box-shadow: inset 0 0 0 1px theme('colors.primary');
+}
+
+@keyframes shimmer {
+    from {
+        background-position: 200% 0;
+    }
+
+    to {
+        background-position: -200% 0;
+    }
+}
+
+.animate-shimmer {
+    background: linear-gradient(90deg,
+            var(--color-primary),
+            #C2D5FF,
+           var(--color-primaryDark));
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s infinite linear;
 }
